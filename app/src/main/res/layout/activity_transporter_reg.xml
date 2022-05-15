@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".PartyReg"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/transporterr" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:minHeight="50dp"
+            android:text="TRANSPORTER REGISTRATION "
+            android:textColor="#3F51B5"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Your Name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"></EditText>
+
+
+        <EditText
+            android:id="@+id/phoneEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Your Phone number"
+            android:inputType="phone"
+            android:minHeight="48dp"></EditText>
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Your Email"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"></EditText>
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Your password"
+            android:inputType="textPassword"
+            android:minHeight="48dp"></EditText>
+
+        <EditText
+            android:id="@+id/aadharEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Aadhar Number"
+            android:inputType="number"
+            android:minHeight="48dp"></EditText>
+
+
+
+        <EditText
+            android:id="@+id/transportOfficeNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="transport Office Name"
+            android:inputType="text"
+            android:minHeight="48dp"></EditText>
+
+
+
+        <EditText
+            android:id="@+id/transportAddressEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Transport Office Address"
+            android:inputType="textPostalAddress"
+            android:minHeight="48dp"></EditText>
+
+
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:minHeight="48dp"
+            android:text=" SUBMIT "
+            android:id="@+id/transportersubmitbtn"
+            android:textSize="15dp"
+            android:layout_marginBottom="30dp"
+            ></Button>
+
+    </LinearLayout>
+
+
+</ScrollView>

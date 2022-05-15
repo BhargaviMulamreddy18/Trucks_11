@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "13668927890",
+    "project_id": "trucks-9941a",
+    "storage_bucket": "trucks-9941a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:13668927890:android:9ea6342e083a70f85a594b",
+        "android_client_info": {
+          "package_name": "com.bten1.trucks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "13668927890-m43rpke6qtacdv1smp06ds8h9dimng27.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFZ01PWkbPgnnetabVn-cpZBJaKML89lI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "13668927890-m43rpke6qtacdv1smp06ds8h9dimng27.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

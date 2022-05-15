@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bten1.trucks">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Trucks">
+        <activity
+            android:name=".PartyFinal"
+            android:exported="false" />
+        <activity
+            android:name=".MapL"
+            android:exported="false" />
+        <activity
+            android:name=".TransporterLogin"
+            android:exported="false" />
+        <activity
+            android:name=".PartyLogin"
+            android:exported="false" />
+        <activity
+            android:name=".TruckOwnerLogin"
+            android:exported="false" />
+        <activity
+            android:name=".AfterLoginSelectPage"
+            android:exported="false" />
+        <activity
+            android:name=".TruckOwnerReg2"
+            android:exported="false" />
+        <activity
+            android:name=".TransporterReg"
+            android:exported="false" />
+        <activity
+            android:name=".PartyReg"
+            android:exported="false" />
+        <activity
+            android:name=".TruckOwnerReg"
+            android:exported="false" />
+        <activity
+            android:name=".HomePage"
+            android:exported="false" />
+        <activity
+            android:name=".SelectPage"
+            android:exported="false" />
+        <activity
+            android:name=".LogIn"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
