@@ -10,40 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trucks">
         <activity
-            android:name=".PartyFinal"
-            android:exported="false" />
-        <activity
-            android:name=".MapL"
-            android:exported="false" />
-        <activity
-            android:name=".TransporterLogin"
-            android:exported="false" />
-        <activity
-            android:name=".PartyLogin"
-            android:exported="false" />
-        <activity
-            android:name=".TruckOwnerLogin"
+            android:name=".Firstpage"
             android:exported="false" />
         <activity
             android:name=".AfterLoginSelectPage"
             android:exported="false" />
         <activity
-            android:name=".TruckOwnerReg2"
-            android:exported="false" />
-        <activity
-            android:name=".TransporterReg"
-            android:exported="false" />
-        <activity
-            android:name=".PartyReg"
-            android:exported="false" />
-        <activity
-            android:name=".TruckOwnerReg"
+            android:name=".Register1"
             android:exported="false" />
         <activity
             android:name=".HomePage"
-            android:exported="false" />
-        <activity
-            android:name=".SelectPage"
             android:exported="false" />
         <activity
             android:name=".LogIn"

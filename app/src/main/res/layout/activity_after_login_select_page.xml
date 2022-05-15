@@ -5,78 +5,127 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SelectPage"
+    tools:context=".LogIn"
     android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    >
+    android:layout_marginRight="20dp">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-
-
-
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="8dp"
             android:src="@drawable/img" />
 
-
-        <Button
-            android:id="@+id/truckowneralbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
-            android:clickable="true"
-            android:minHeight="48dp"
-            android:text=" Truck Owner"
-            android:textSize="15dp"></Button>
-
-
-        <ImageView
-            android:layout_width="218dp"
-            android:layout_height="81dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:src="@drawable/img_6" />
-
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
-            android:clickable="true"
-            android:minHeight="48dp"
-            android:text=" Party"
-            android:id="@+id/xalbtn"
-            android:textSize="15dp"></Button>
-
-
-
-        <ImageView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:src="@drawable/transporterr" />
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_trucks2"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:minHeight="59dp"
+                android:text="Trucks"
+                android:layout_alignParentRight="true"
+                android:textSize="15dp"></Button>
+
+            <Button
+                android:id="@+id/btn_party"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:minHeight="59dp"
+                android:text="Party"
+                android:textSize="15dp"></Button>
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/loadtype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="29dp"
+            android:hint="Load Type"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"></EditText>
+
+
+        <EditText
+            android:id="@+id/loadingpoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Loading Point"
+            android:inputType="textPostalAddress"
+            android:minHeight="48dp"></EditText>
+
+
+
+        <EditText
+            android:id="@+id/unloadingpoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Unloading Point"
+            android:inputType="textPostalAddress"
+            android:minHeight="48dp"></EditText>
+
+
+        <EditText
+            android:id="@+id/freight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Frieght"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"></EditText>
+
+        <EditText
+            android:id="@+id/tons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="No.of Tons"
+            android:inputType="number"
+            android:minHeight="48dp"></EditText>
+
+        <EditText
+            android:id="@+id/advance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Advance Amount"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"></EditText>
+
+
+        <EditText
+            android:id="@+id/delivery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Delivery Date"
+            android:inputType="date"
+            android:minHeight="48dp"></EditText>
+
 
         <Button
+            android:id="@+id/save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
-            android:clickable="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="30dp"
             android:minHeight="48dp"
-            android:text=" Transporter"
-            android:id="@+id/transporteralbtn"
-            android:textSize="15dp"
-            android:layout_marginBottom="30dp"></Button>
-
-
+            android:text="SAVE"
+            android:textSize="15dp"></Button>
     </LinearLayout>
 </ScrollView>

@@ -1,0 +1,98 @@
+package com.bten1.trucks;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Patterns;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+
+public class Register1 extends AppCompatActivity {
+    Button btn2_signup;
+    EditText user_name, pass_word,name1,phone1;
+    FirebaseAuth mAuth;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_register1);
+        user_name=findViewById(R.id.username);
+        pass_word=findViewById(R.id.password1);
+        name1=findViewById(R.id.name);
+        phone1=findViewById(R.id.phone);
+        btn2_signup=findViewById(R.id.sign);
+        mAuth=FirebaseAuth.getInstance();
+        btn2_signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Register1.this, LogIn.class));
+                String email = user_name.getText().toString().trim();
+                String password= pass_word.getText().toString().trim();
+                if(email.isEmpty())
+                {
+                    user_name.setError("Email is empty");
+                    user_name.requestFocus();
+                    return;
+                }
+                if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
+                {
+                    user_name.setError("Enter the valid email address");
+                    user_name.requestFocus();
+                    return;
+                }
+                if(password.isEmpty())
+                {
+                    pass_word.setError("Enter the password");
+                    pass_word.requestFocus();
+                    return;
+                }
+                if(password.length()<6)
+                {
+                    pass_word.setError("Length of the password should be more than 6");
+                    pass_word.requestFocus();
+                    return;
+                }
+                mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()) {
+                            Toast.makeText(Register1.this, "You are successfully Registered", Toast.LENGTH_SHORT).show();
+                            String name_v = name1.getText().toString();
+                            String phone_v=phone1.getText().toString();
+
+                            if(name_v.isEmpty()){
+                                Toast.makeText(Register1.this,"No name entered!",Toast.LENGTH_SHORT).show();
+                            }
+                            if(phone_v.isEmpty()){
+                                Toast.makeText(Register1.this,"No ph number entered!",Toast.LENGTH_SHORT).show();
+                            }
+                            HashMap<String,Object> map=new HashMap<>();
+                            map.put("Name",name_v);
+                            map.put("phone number",phone_v);
+                            map.put("email",email);
+                            FirebaseDatabase.getInstance().getReference().child("Registrations").child(name_v).updateChildren(map);
+                            }
+                        else
+                        {
+                            Toast.makeText(Register1.this,"You are not Registered! Try again",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+            }
+        });
+
+    }
+}
