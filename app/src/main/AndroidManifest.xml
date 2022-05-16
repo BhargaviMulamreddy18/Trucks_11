@@ -10,7 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trucks">
         <activity
-            android:name=".Firstpage"
+            android:name=".TruckDetails"
+            android:exported="false" />
+        <activity
+            android:name=".CallInfo"
+            android:exported="false" />
+        <activity
+            android:name=".Truckpage"
+            android:exported="false" />
+        <activity
+            android:name=".userlist"
             android:exported="false" />
         <activity
             android:name=".AfterLoginSelectPage"

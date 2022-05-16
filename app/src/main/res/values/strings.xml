@@ -3,4 +3,6 @@
     <string name="remember_me">REMEMBER_ME</string>
     <string name="forget_pwd">Forgot Password</string>
     <string name="yearOfPurchase">Year Of Purchase</string>
+    <string name="party">party</string>
+    <string name="truck">truck</string>
 </resources>

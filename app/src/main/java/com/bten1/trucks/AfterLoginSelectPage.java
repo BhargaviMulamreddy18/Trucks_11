@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -32,6 +32,7 @@ public class AfterLoginSelectPage extends AppCompatActivity {
         delivery_v = findViewById(R.id.delivery);
         mAuth = FirebaseAuth.getInstance();
         btn_save = findViewById(R.id.save);
+        Button btn_truck = findViewById(R.id.truck);
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,9 +51,10 @@ public class AfterLoginSelectPage extends AppCompatActivity {
                 m.put("Freight", freight_v_v);
                 m.put("Tons", tons_v_v);
                 m.put("Advance Amount", advance_v_v);
-              m.put("Delivery date", delivery_v_v);
+                m.put("Delivery date", delivery_v_v);
                 FirebaseDatabase.getInstance().getReference().child("Party_Data").child(load_type_v).updateChildren(m);
-                startActivity(new Intent(AfterLoginSelectPage.this, Firstpage.class));
+                startActivity(new Intent(AfterLoginSelectPage.this, userlist.class));
+                btn_truck.setOnClickListener(v -> startActivity(new Intent(AfterLoginSelectPage.this,Truckpage.class )));
             }
         });
 

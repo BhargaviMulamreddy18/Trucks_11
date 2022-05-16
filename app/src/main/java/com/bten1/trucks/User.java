@@ -1,9 +1,8 @@
-package com.bten1.trucks;
 
+package com.bten1.trucks;
 public class User {
 
-    String loadtype, loadingpoint, unloadingpoint, freight, tons, advance;
-
+    String loadtype,loadingpoint,unloadingpoint,freight,tons,advance;
 
     public User() {
     }

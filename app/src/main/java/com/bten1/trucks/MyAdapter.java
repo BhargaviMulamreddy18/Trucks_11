@@ -16,6 +16,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     Context context;
     ArrayList<User> list;
 
+
+
     public MyAdapter(Context context, ArrayList<User> list) {
         this.context = context;
         this.list = list;
@@ -24,45 +26,46 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-    View v=LayoutInflater.from(context).inflate(R.layout.item,parent,false);
-        return new MyViewHolder(v);
+        View view= LayoutInflater.from(context).inflate(R.layout.item,parent,false);
+        return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         User user=list.get(position);
-        holder.loadtypec.setText(user.getLoadtype());
-        holder.loadingpointc.setText(user.getLoadingpoint());
-        holder.unloadingpointc.setText(user.getUnloadingpoint());
-        holder.freightc.setText(user.getFreight());
-        holder.tonsc.setText(user.getTons());
-        holder.advancec.setText(user.getAdvance());
+        holder.loadtype.setText(user.getLoadtype());
+        holder.loadingpoint.setText(user.getLoadingpoint());
+        holder.unloadingpoint.setText(user.getUnloadingpoint());
+        holder.freight.setText(user.getFreight());
+        holder.tons.setText(user.getTons());
+        holder.advance.setText(user.getAdvance());
 
 
     }
 
     @Override
     public int getItemCount() {
+
         return list.size();
     }
 
     public static class MyViewHolder extends  RecyclerView.ViewHolder{
 
-        TextView loadtypec,loadingpointc,unloadingpointc,freightc,tonsc,advancec;
+        TextView loadtype,loadingpoint,unloadingpoint,freight,tons,advance;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            loadtypec=itemView.findViewById(R.id.loadtypevalue1);
-            loadingpointc=itemView.findViewById(R.id.loadingpointvalue1);
-            unloadingpointc=itemView.findViewById(R.id.unloadingpointvalue1);
-            freightc=itemView.findViewById(R.id.freightvalue1);
-            tonsc=itemView.findViewById(R.id.tonsvalue1);
-            advancec=itemView.findViewById(R.id.advancevalue1);
+            loadtype=(TextView) itemView.findViewById(R.id.tvloadType);
+            loadingpoint=(TextView) itemView.findViewById(R.id.tvloadingpoint);
+            unloadingpoint=(TextView) itemView.findViewById(R.id.tvunloadingpoint);
+            freight=(TextView) itemView.findViewById(R.id.tvfreight);
+            tons=(TextView) itemView.findViewById(R.id.tvtons);
+            advance=(TextView) itemView.findViewById(R.id.tvadvance);
+
 
         }
-
     }
 
 }

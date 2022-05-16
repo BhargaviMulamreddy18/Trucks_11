@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Truckpage">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/truckPage"
+        android:layout_width="408dp"
+        android:layout_height="619dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/party1"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/party"
+        app:layout_constraintBottom_toTopOf="@+id/truckPage"
+        app:layout_constraintEnd_toStartOf="@+id/truck1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/truck1"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/truck"
+        app:layout_constraintBottom_toTopOf="@+id/truckPage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/party1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

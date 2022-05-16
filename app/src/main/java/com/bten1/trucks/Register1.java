@@ -19,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
+
 public class Register1 extends AppCompatActivity {
     Button btn2_signup;
     EditText user_name, pass_word,name1,phone1;
@@ -83,7 +84,7 @@ public class Register1 extends AppCompatActivity {
                             map.put("phone number",phone_v);
                             map.put("email",email);
                             FirebaseDatabase.getInstance().getReference().child("Registrations").child(name_v).updateChildren(map);
-                            }
+                        }
                         else
                         {
                             Toast.makeText(Register1.this,"You are not Registered! Try again",Toast.LENGTH_SHORT).show();
@@ -96,3 +97,4 @@ public class Register1 extends AppCompatActivity {
 
     }
 }
+
