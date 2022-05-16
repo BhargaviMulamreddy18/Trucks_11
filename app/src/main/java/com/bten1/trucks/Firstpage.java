@@ -42,6 +42,8 @@ public class Firstpage extends AppCompatActivity {
                     User user =dataSnapshot.getValue(User.class);
                     list.add(user);
 
+
+
                 }
                 myAdapter.notifyDataSetChanged();
 

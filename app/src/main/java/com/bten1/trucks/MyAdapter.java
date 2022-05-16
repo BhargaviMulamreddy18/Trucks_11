@@ -62,6 +62,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
             advancec=itemView.findViewById(R.id.advancevalue1);
 
         }
+
     }
 
 }
