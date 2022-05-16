@@ -19,14 +19,14 @@ public class Firstpage extends AppCompatActivity {
     RecyclerView recyclerView;
     DatabaseReference database;
     MyAdapter myAdapter;
-    ArrayList<user> list;
+    ArrayList<User> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firstpage);
 
-        recyclerView =findViewById(R.id.userlist);
+        recyclerView =findViewById(R.id.firstpage1);
         database= FirebaseDatabase.getInstance().getReference("Party_Data");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -39,8 +39,8 @@ public class Firstpage extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot:snapshot.getChildren()){
 
-                    user use =dataSnapshot.getValue(user.class);
-                    list.add(use);
+                    User user =dataSnapshot.getValue(User.class);
+                    list.add(user);
 
                 }
                 myAdapter.notifyDataSetChanged();

@@ -3,7 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_after_login_select_page.xml" value="0.1" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_after_login_select_page.xml" value="0.2" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_firstpage.xml" value="0.25" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_home_page.xml" value="0.25" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_log_in.xml" value="0.2" />
@@ -17,7 +17,7 @@
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_transporter_reg.xml" value="0.25" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_truck_owner_reg.xml" value="0.2359375" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_truck_owner_reg2.xml" value="0.2" />
-        <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/item.xml" value="0.1" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/item.xml" value="0.264" />
       </map>
     </option>
   </component>
