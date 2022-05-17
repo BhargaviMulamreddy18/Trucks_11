@@ -39,7 +39,7 @@ public class userlist extends AppCompatActivity {
         myAdapter = new MyAdapter(this,list);
         recyclerView.setAdapter(myAdapter);
         btn_party.setOnClickListener(v -> startActivity(new Intent(userlist.this,AfterLoginSelectPage.class )));
-        btn_truck.setOnClickListener(v -> startActivity(new Intent(userlist.this,Truckpage.class )));
+        btn_truck.setOnClickListener(v -> startActivity(new Intent(userlist.this,TruckDetails.class )));
         database.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

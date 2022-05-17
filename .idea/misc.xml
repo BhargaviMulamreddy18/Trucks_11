@@ -6,8 +6,10 @@
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_after_login_select_page.xml" value="0.2" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_firstpage.xml" value="0.25" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_home_page.xml" value="0.25" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_item2.xml" value="0.1" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_log_in.xml" value="0.2" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_mappage.xml" value="0.1" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_party_final.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_party_login.xml" value="0.264" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_party_reg.xml" value="0.25" />
@@ -18,9 +20,9 @@
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_truck_details.xml" value="0.19479166666666667" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_truck_owner_reg.xml" value="0.2359375" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_truck_owner_reg2.xml" value="0.2" />
-        <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_truckpage.xml" value="0.1" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_truckpage.xml" value="0.2" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_userlist.xml" value="0.1" />
-        <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/item.xml" value="0.1" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/item.xml" value="0.2" />
       </map>
     </option>
   </component>
