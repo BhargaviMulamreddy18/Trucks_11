@@ -12,19 +12,9 @@ public class Item extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.item);
+        setContentView(R.layout.person);
 
         Button btn_fix = (Button) findViewById(R.id.fix);
-        Button btn_call = (Button) findViewById(R.id.call);
-        btn_call.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                startActivity(new Intent(Item.this, CallInfo.class));
-
-            }
-        });
-
         btn_fix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -27,6 +26,7 @@ public class Register1 extends AppCompatActivity {
     Button sign;
     EditText username, password1,name,phone;
     FirebaseFirestore dbroot;
+    FirebaseAuth mAuth;
 
 
     @Override
@@ -39,9 +39,9 @@ public class Register1 extends AppCompatActivity {
         phone = findViewById(R.id.phone);
         sign = findViewById(R.id.sign);
 
-        dbroot=FirebaseFirestore.getInstance();
+       // dbroot=FirebaseFirestore.getInstance();
 
-        sign.setOnClickListener(new View.OnClickListener() {
+      /*  sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 insertdata();
@@ -68,10 +68,10 @@ public class Register1 extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Inserted Successfully",Toast.LENGTH_LONG).show();
             }
         });
-    }
+    }*/
 
 
-/*
+
 
         mAuth=FirebaseAuth.getInstance();
         sign.setOnClickListener(new View.OnClickListener() {
@@ -134,6 +134,6 @@ public class Register1 extends AppCompatActivity {
             }
         });
 
-    }*/
+    }
     }
 

@@ -25,7 +25,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/truck"
+                android:id="@+id/truck1"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -48,14 +48,34 @@
                 android:textSize="15dp"></Button>
         </RelativeLayout>
 
+
+        <EditText
+            android:id="@+id/partyname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:hint="Party Name"
+            android:inputType="textPostalAddress"
+            android:minHeight="48dp"></EditText>
+
+        <EditText
+            android:id="@+id/partyrno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Party rno"
+            android:inputType="textPostalAddress"
+            android:minHeight="48dp"></EditText>
+
         <EditText
             android:id="@+id/loadtype"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="29dp"
+            android:layout_marginTop="8dp"
             android:hint="Load Type"
             android:inputType="textPersonName"
             android:minHeight="48dp"></EditText>
+
 
 
         <EditText

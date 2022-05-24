@@ -15,14 +15,15 @@ import java.util.HashMap;
 public class AfterLoginSelectPage extends AppCompatActivity {
 
     Button btn_save;
-    EditText load_type, loading_point, unloading_point, freight_v, tons_v,advance_v,delivery_v;
+    EditText party_name,party_rno,load_type, loading_point, unloading_point, freight_v, tons_v,advance_v,delivery_v;
     FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_after_login_select_page);
-
+        party_name=findViewById(R.id.partyname);
+        party_rno=findViewById(R.id.partyrno);
         load_type = findViewById(R.id.loadtype);
         loading_point = findViewById(R.id.loadingpoint);
         unloading_point = findViewById(R.id.unloadingpoint);
@@ -32,11 +33,12 @@ public class AfterLoginSelectPage extends AppCompatActivity {
         delivery_v = findViewById(R.id.delivery);
         mAuth = FirebaseAuth.getInstance();
         btn_save = findViewById(R.id.save);
-        Button btn_truck = findViewById(R.id.truck);
+        Button btn_truck = findViewById(R.id.truck1);
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                String party_name_v = party_name.getText().toString();
+                String party_rno_v = party_rno.getText().toString();
                 String load_type_v = load_type.getText().toString();
                 String loading_point_v = loading_point.getText().toString();
                 String unloading_point_v = unloading_point.getText().toString();
@@ -47,6 +49,8 @@ public class AfterLoginSelectPage extends AppCompatActivity {
                 HashMap<String, Object> m = new HashMap<>();
                 m.put("Load_type", load_type_v);
                 m.put("loading_point", loading_point_v);
+                m.put("party_name", party_name_v);
+                m.put("party_rno", party_rno_v);
                 m.put("unloading_point", unloading_point_v);
                 m.put("Freight", freight_v_v);
                 m.put("Tons", tons_v_v);
@@ -54,7 +58,7 @@ public class AfterLoginSelectPage extends AppCompatActivity {
                 m.put("Delivery date", delivery_v_v);
                 FirebaseDatabase.getInstance().getReference().child("Party_Data").child(load_type_v).updateChildren(m);
                 startActivity(new Intent(AfterLoginSelectPage.this, userlist.class));
-                btn_truck.setOnClickListener(v -> startActivity(new Intent(AfterLoginSelectPage.this,Truckpage.class )));
+                btn_truck.setOnClickListener(v -> startActivity(new Intent(AfterLoginSelectPage.this,userlist.class )));
             }
         });
 
