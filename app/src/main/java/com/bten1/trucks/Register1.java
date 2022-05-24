@@ -16,53 +16,92 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
+import java.util.Map;
 
 
 public class Register1 extends AppCompatActivity {
-    Button btn2_signup;
-    EditText user_name, pass_word,name1,phone1;
-    FirebaseAuth mAuth;
+    Button sign;
+    EditText username, password1,name,phone;
+    FirebaseFirestore dbroot;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register1);
-        user_name=findViewById(R.id.username);
-        pass_word=findViewById(R.id.password1);
-        name1=findViewById(R.id.name);
-        phone1=findViewById(R.id.phone);
-        btn2_signup=findViewById(R.id.sign);
+        username = findViewById(R.id.username);
+        password1 = findViewById(R.id.password1);
+        name = findViewById(R.id.name);
+        phone = findViewById(R.id.phone);
+        sign = findViewById(R.id.sign);
+
+        dbroot=FirebaseFirestore.getInstance();
+
+        sign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                insertdata();
+
+            }
+
+
+        });
+    }
+
+
+    private void insertdata() {
+        Map<String,String> items=new HashMap<>();
+        items.put("name",name.getText().toString().trim());
+        items.put("phone number",phone.getText().toString().trim());
+        items.put("username",username.getText().toString().trim());
+
+        dbroot.collection("Registrations").add(items).addOnCompleteListener(new OnCompleteListener<com.google.firebase.firestore.DocumentReference>() {
+            @Override
+            public void onComplete(@NonNull Task<com.google.firebase.firestore.DocumentReference> task) {
+                name.setText("");
+                username.setText("");
+                phone.setText("");
+                Toast.makeText(getApplicationContext(),"Inserted Successfully",Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+
+/*
+
         mAuth=FirebaseAuth.getInstance();
-        btn2_signup.setOnClickListener(new View.OnClickListener() {
+        sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Register1.this, LogIn.class));
-                String email = user_name.getText().toString().trim();
-                String password= pass_word.getText().toString().trim();
+                String email = username.getText().toString().trim();
+                String password= password1.getText().toString().trim();
                 if(email.isEmpty())
                 {
-                    user_name.setError("Email is empty");
-                    user_name.requestFocus();
+                    username.setError("Email is empty");
+                    username.requestFocus();
                     return;
                 }
                 if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
                 {
-                    user_name.setError("Enter the valid email address");
-                    user_name.requestFocus();
+                    username.setError("Enter the valid email address");
+                    username.requestFocus();
                     return;
                 }
                 if(password.isEmpty())
                 {
-                    pass_word.setError("Enter the password");
-                    pass_word.requestFocus();
+                    password1.setError("Enter the password");
+                    password1.requestFocus();
                     return;
                 }
                 if(password.length()<6)
                 {
-                    pass_word.setError("Length of the password should be more than 6");
-                    pass_word.requestFocus();
+                    password1.setError("Length of the password should be more than 6");
+                    password1.requestFocus();
                     return;
                 }
                 mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -70,8 +109,8 @@ public class Register1 extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
                             Toast.makeText(Register1.this, "You are successfully Registered", Toast.LENGTH_SHORT).show();
-                            String name_v = name1.getText().toString();
-                            String phone_v=phone1.getText().toString();
+                            String name_v = name.getText().toString();
+                            String phone_v=phone.getText().toString();
 
                             if(name_v.isEmpty()){
                                 Toast.makeText(Register1.this,"No name entered!",Toast.LENGTH_SHORT).show();
@@ -95,6 +134,6 @@ public class Register1 extends AppCompatActivity {
             }
         });
 
+    }*/
     }
-}
 
