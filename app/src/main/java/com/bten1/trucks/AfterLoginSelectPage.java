@@ -1,9 +1,11 @@
 package com.bten1.trucks;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -64,11 +66,11 @@ public class AfterLoginSelectPage extends AppCompatActivity {
                 m.put("unloading_point", unloading_point_v);
                 m.put("Freight", freight_v_v);
                 m.put("Tons", tons_v_v);
-                m.put("Advance Amount", advance_v_v);
-                m.put("Delivery date", delivery_v_v);
+                m.put("advance_amt", advance_v_v);
+                m.put("delivery_date", delivery_v_v);
                 m.put("Email",umail);
                 m.put("uid",i);
-                FirebaseDatabase.getInstance().getReference().child("Party_Data").child(umail).updateChildren(m);
+                FirebaseDatabase.getInstance().getReference().child("Party_Data").child(i).updateChildren(m);
                 startActivity(new Intent(AfterLoginSelectPage.this, userlist.class));
                 btn_truck.setOnClickListener(v -> startActivity(new Intent(AfterLoginSelectPage.this,userlist.class )));
             }
