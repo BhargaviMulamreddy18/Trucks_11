@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
@@ -22,7 +23,37 @@ public class TruckDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_truck_details);
 
-        truck_no= findViewById(R.id.truckno);
+        Button p_history = (Button) findViewById(R.id.p_history);
+
+        p_history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(TruckDetails.this, AfterLoginSelectPage.class));
+
+            }
+        });
+        Button logout= (Button) findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.signOut();
+                startActivity(new Intent(TruckDetails.this, LogIn.class));
+
+            }
+        });
+        Button t_history = (Button) findViewById(R.id.t_history);
+
+        t_history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(TruckDetails.this, AfterLoginSelectPage.class));
+
+            }
+        });
+
+        truck_no= findViewById(R.id.truckno1);
         mAuth = FirebaseAuth.getInstance();
         btn_submit = findViewById(R.id.submit1);
         btn_submit.setOnClickListener(new View.OnClickListener() {
@@ -40,5 +71,7 @@ public class TruckDetails extends AppCompatActivity {
         });
 
     }
+
+
 
 }

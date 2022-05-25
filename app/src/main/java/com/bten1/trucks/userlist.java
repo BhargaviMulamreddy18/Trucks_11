@@ -58,7 +58,20 @@ public class userlist extends AppCompatActivity {
 
             }
         });
+        Button btn_history = (Button) findViewById(R.id.history);
+
+        btn_history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(userlist.this, TruckDetails.class));
+
+            }
+        });
+
+
         Button btn_truck = (Button) findViewById(R.id.truck);
+
 
         btn_truck.setOnClickListener(new View.OnClickListener() {
             @Override

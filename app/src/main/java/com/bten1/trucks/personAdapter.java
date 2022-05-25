@@ -12,12 +12,6 @@ import java.util.ArrayList;
 
 public class personAdapter extends FirebaseRecyclerAdapter<person,personAdapter.personsViewholder> {
 
-    /**
-     * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
-     * {@link FirebaseRecyclerOptions} for configuration options.
-     *
-     * @param options
-     */
     public personAdapter(@NonNull FirebaseRecyclerOptions<person> options) {
         super(options);
     }
@@ -26,8 +20,9 @@ public class personAdapter extends FirebaseRecyclerAdapter<person,personAdapter.
 
     @Override
     protected void onBindViewHolder(@NonNull personsViewholder holder, int position, @NonNull person model) {
+        holder.Email.setText(model.getEmail());
         holder.party_name.setText(model.getParty_name());
-        holder.party_rno.setText(model.getParty_rno());
+        holder.party_phone_no.setText(model.getParty_phone_no());
         holder.Freight.setText(model.getFreight());
         holder.Load_type.setText(model.getLoad_type());
         holder.Tons.setText(model.getTons());
@@ -43,12 +38,13 @@ public class personAdapter extends FirebaseRecyclerAdapter<person,personAdapter.
     }
 
     public class personsViewholder extends RecyclerView.ViewHolder{
-        TextView Freight,Load_type,Tons,loading_point,unloading_point,party_name,party_rno;
+        TextView Email,Freight,Load_type,Tons,loading_point,unloading_point,party_name,party_phone_no;
 
         public personsViewholder(@NonNull View itemView) {
             super(itemView);
+            Email=itemView.findViewById(R.id.tvemail);
             party_name=itemView.findViewById(R.id.tvpartyname);
-            party_rno=itemView.findViewById(R.id.tvpartyrno);
+            party_phone_no=itemView.findViewById(R.id.tvpartyrno);
             Freight=itemView.findViewById(R.id.tvfreight);
             Load_type=itemView.findViewById(R.id.tvloadType);
             loading_point=itemView.findViewById(R.id.tvloadingpoint);

@@ -7,12 +7,26 @@ public class person {
    private String unloading_point;
    private String Freight;
    private String Tons;
-
-    public person(String party_name){
-        this.party_name = party_name;
-    }
+    private String Email;
     private String party_name;
-   private String party_rno;
+    private String party_phone_no;
+
+    public String getParty_phone_no() {
+        return party_phone_no;
+    }
+
+    public void setParty_phone_no(String party_phone_no) {
+        this.party_phone_no = party_phone_no;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
     public person() {
     }
 
@@ -24,13 +38,6 @@ public class person {
         this.party_name = party_name;
     }
 
-    public String getParty_rno() {
-        return party_rno;
-    }
-
-    public void setParty_rno(String party_rno) {
-        this.party_rno = party_rno;
-    }
 
     public person(String load_type, String loading_point, String unloading_point, String freight, String tons) {
         Load_type = load_type;

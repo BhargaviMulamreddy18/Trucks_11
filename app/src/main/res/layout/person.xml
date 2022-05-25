@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="Party Rno"
+            android:text="Party phone number"
             android:textColor="#0000AA"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,6 +71,38 @@
 
 
         <TextView
+            android:id="@+id/email1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Party email"
+            android:textColor="#0000AA"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/partyrno1" />
+
+
+        <TextView
+            android:id="@+id/tvemail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="bhargaviii@gmail.com"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/loadtype1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/email1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+
+        <TextView
             android:id="@+id/loadtype1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -80,7 +112,7 @@
             android:textColor="#0000AA"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/partyrno1" />
+            app:layout_constraintTop_toBottomOf="@+id/email1" />
 
 
         <TextView
@@ -112,19 +144,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loadtype1" />
 
+
         <TextView
             android:id="@+id/tvloadingpoint"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="52dp"
             android:layout_marginEnd="16dp"
             android:text="Vijayawada"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/loadingpoint1"
-            app:layout_constraintTop_toBottomOf="@id/tvloadType" />
-
+            app:layout_constraintTop_toBottomOf="@id/tvemail" />
 
         <TextView
             android:id="@+id/unloadingpoint1"
@@ -166,8 +199,8 @@
 
         <TextView
             android:id="@+id/tvfreight"
-            android:layout_width="284dp"
-            android:layout_height="18dp"
+            android:layout_width="271dp"
+            android:layout_height="22dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"

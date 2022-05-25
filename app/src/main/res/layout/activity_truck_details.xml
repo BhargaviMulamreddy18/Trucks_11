@@ -4,20 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:foregroundTint="#320D0D"
     tools:context=".TruckDetails">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="#FFFAFA"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+
+        <Button
+            android:id="@+id/t_p_historypage"
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:text="History" />
+
+        <Button
+            android:id="@+id/t_history"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:alpha="0.4"
+            android:background="#873E3E"
+            android:text="Truck History" />
+
+        <Button
+            android:id="@+id/p_history"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:alpha="0.4"
+            android:text="Party History" />
 
         <EditText
+            android:id="@+id/truckno1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:hint="Truck Number"
-            android:id="@+id/truckno">
-        </EditText>
+            android:layout_height="63dp"
+            android:textColor="#253697"
+            android:textSize="16sp"
+            tools:text="Enter Truck Number to search" />
 
         <Button
             android:id="@+id/submit1"
@@ -28,6 +56,17 @@
             android:layout_marginBottom="30dp"
             android:minHeight="48dp"
             android:text="Submit"
+            android:textSize="15dp"></Button>
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="30dp"
+            android:minHeight="48dp"
+            android:text="logout"
             android:textSize="15dp"></Button>
 
 
