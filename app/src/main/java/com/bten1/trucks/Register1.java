@@ -1,20 +1,26 @@
 package com.bten1.trucks;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -24,8 +30,9 @@ import java.util.Map;
 
 public class Register1 extends AppCompatActivity {
     Button sign;
-    EditText username, password1,name,phone;
-    FirebaseFirestore dbroot;
+    EditText username, password1, name, phone;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    CollectionReference UserS = db.collection("UserS");
     FirebaseAuth mAuth;
 
 
@@ -39,7 +46,7 @@ public class Register1 extends AppCompatActivity {
         phone = findViewById(R.id.phone);
         sign = findViewById(R.id.sign);
 
-       // dbroot=FirebaseFirestore.getInstance();
+        // dbroot=FirebaseFirestore.getInstance();
 
       /*  sign.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,69 +78,94 @@ public class Register1 extends AppCompatActivity {
     }*/
 
 
-
-
-        mAuth=FirebaseAuth.getInstance();
+       mAuth = FirebaseAuth.getInstance();
         sign.setOnClickListener(new View.OnClickListener() {
+            String name_v = name.getText().toString();
+            String phone_v = phone.getText().toString();
+            String mail_v=username.getText().toString();
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Register1.this, LogIn.class));
+
                 String email = username.getText().toString().trim();
-                String password= password1.getText().toString().trim();
-                if(email.isEmpty())
-                {
+                String password = password1.getText().toString().trim();
+                if (email.isEmpty()) {
                     username.setError("Email is empty");
                     username.requestFocus();
                     return;
                 }
-                if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
-                {
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                     username.setError("Enter the valid email address");
                     username.requestFocus();
                     return;
                 }
-                if(password.isEmpty())
-                {
+                if (password.isEmpty()) {
                     password1.setError("Enter the password");
                     password1.requestFocus();
                     return;
                 }
-                if(password.length()<6)
-                {
+                if (password.length() < 6) {
                     password1.setError("Length of the password should be more than 6");
                     password1.requestFocus();
                     return;
                 }
-                mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()) {
+                        if (task.isSuccessful()) {
                             Toast.makeText(Register1.this, "You are successfully Registered", Toast.LENGTH_SHORT).show();
-                            String name_v = name.getText().toString();
-                            String phone_v=phone.getText().toString();
 
-                            if(name_v.isEmpty()){
-                                Toast.makeText(Register1.this,"No name entered!",Toast.LENGTH_SHORT).show();
+
+                            if (!name_v.isEmpty()) {
+                                Toast.makeText(Register1.this, "No name entered!", Toast.LENGTH_SHORT).show();
                             }
-                            if(phone_v.isEmpty()){
-                                Toast.makeText(Register1.this,"No ph number entered!",Toast.LENGTH_SHORT).show();
+                          if (!phone_v.isEmpty()) {
+                                Toast.makeText(Register1.this, "No ph number entered!", Toast.LENGTH_SHORT).show();
                             }
-                            HashMap<String,Object> map=new HashMap<>();
-                            map.put("Name",name_v);
-                            map.put("phone number",phone_v);
-                            map.put("email",email);
-                            FirebaseDatabase.getInstance().getReference().child("Registrations").child(name_v).updateChildren(map);
-                        }
-                        else
-                        {
-                            Toast.makeText(Register1.this,"You are not Registered! Try again",Toast.LENGTH_SHORT).show();
+
+                            storeUserData();
+
+                            startActivity(new Intent(Register1.this, LogIn.class));
+
+
+                            //FirebaseDatabase.getInstance().getReference().child("Registrations").child(name_v).updateChildren(map);*/
+                        } else {
+                            Toast.makeText(Register1.this, "You are not Registered! Try again", Toast.LENGTH_SHORT).show();
                         }
                     }
+
+                    private void storeUserData() {
+
+                        String name_v = name.getText().toString();
+                        String phone_v = phone.getText().toString();
+                        String mail_v=username.getText().toString();
+
+
+                        HashMap<String, Object> map = new HashMap<>();
+                        map.put("Name", name_v);
+                        map.put("phone number", phone_v);
+                        map.put("email", mail_v);
+
+
+                        UserS.add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                                Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG, "Error adding document", e);
+                            }
+
+                        });
+
+
+                    }
+
+
                 });
 
             }
         });
-
     }
-    }
-
+}

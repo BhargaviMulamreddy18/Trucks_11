@@ -29,7 +29,7 @@ public class TruckDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(TruckDetails.this, AfterLoginSelectPage.class));
+                startActivity(new Intent(TruckDetails.this, PartyHistory.class));
 
             }
         });
@@ -48,7 +48,7 @@ public class TruckDetails extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(TruckDetails.this, AfterLoginSelectPage.class));
+                startActivity(new Intent(TruckDetails.this,TruckHistory.class));
 
             }
         });

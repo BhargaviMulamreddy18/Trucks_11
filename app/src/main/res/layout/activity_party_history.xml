@@ -8,7 +8,7 @@
     android:backgroundTint="#9A000000"
     android:backgroundTintMode="src_atop"
     android:transitionName="transition_loginToHome"
-    tools:context=".TruckHistory">
+    tools:context=".PartyHistory">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -47,7 +47,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/userList1"
+        android:id="@+id/userList3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"

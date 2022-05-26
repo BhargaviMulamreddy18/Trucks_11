@@ -2,41 +2,66 @@
 package com.bten1.trucks;
 public class person {
 
-   private String Load_type;
-   private String loading_point;
-   private String unloading_point;
-   private String Freight;
-   private String Tons;
-    private String Email;
-    private String party_name;
-    private String party_phone_no;
-    private String advance_amt;
-    private String delivery_date;
-    private String i;
-
+    public String mail;
+    public String party_name;
+    public String load_type;
+    public String loading_point;
+    public String unloading_point;
+    public String freight;
+    public String tons;
+    public String party_phone_no;
+    public String advance_amt;
+    public String delivery_date;
+    public String uid;
+    public String fixer;
     public person() {
     }
 
-    public person(String load_type, String loading_point, String unloading_point, String freight, String tons, String email, String party_name, String party_phone_no, String advance_amt, String delivery_date, String i) {
-        Load_type = load_type;
+    public person(String mail, String party_name, String load_type, String loading_point, String unloading_point, String freight, String tons, String party_phone_no, String advance_amt, String delivery_date, String uid, String fixer) {
+        this.mail = mail;
+        this.party_name = party_name;
+        this.load_type = load_type;
         this.loading_point = loading_point;
         this.unloading_point = unloading_point;
-        Freight = freight;
-        Tons = tons;
-        Email = email;
-        this.party_name = party_name;
+        this.freight = freight;
+        this.tons = tons;
         this.party_phone_no = party_phone_no;
         this.advance_amt = advance_amt;
         this.delivery_date = delivery_date;
-        this.i = i;
+        this.uid = uid;
+        this.fixer = fixer;
+    }
+
+    public String getFixer() {
+        return fixer;
+    }
+
+    public void setFixer(String fixer) {
+        this.fixer = fixer;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getParty_name() {
+        return party_name;
+    }
+
+    public void setParty_name(String party_name) {
+        this.party_name = party_name;
     }
 
     public String getLoad_type() {
-        return Load_type;
+        return load_type;
     }
 
     public void setLoad_type(String load_type) {
-        Load_type = load_type;
+        this.load_type = load_type;
     }
 
     public String getLoading_point() {
@@ -56,35 +81,19 @@ public class person {
     }
 
     public String getFreight() {
-        return Freight;
+        return freight;
     }
 
     public void setFreight(String freight) {
-        Freight = freight;
+        this.freight = freight;
     }
 
     public String getTons() {
-        return Tons;
+        return tons;
     }
 
     public void setTons(String tons) {
-        Tons = tons;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public void setEmail(String email) {
-        Email = email;
-    }
-
-    public String getParty_name() {
-        return party_name;
-    }
-
-    public void setParty_name(String party_name) {
-        this.party_name = party_name;
+        this.tons = tons;
     }
 
     public String getParty_phone_no() {
@@ -111,11 +120,13 @@ public class person {
         this.delivery_date = delivery_date;
     }
 
-    public String getI() {
-        return i;
+    public String getUid() {
+        return uid;
     }
 
-    public void setI(String i) {
-        this.i = i;
+    public void setUid(String uid) {
+        this.uid = uid;
     }
+
+
 }

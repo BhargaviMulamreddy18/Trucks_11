@@ -14,6 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trucks">
         <activity
+            android:name=".PartyHistory"
+            android:exported="false" />
+        <activity
+            android:name=".person2"
+            android:exported="false" />
+        <activity
             android:name=".TruckHistory"
             android:exported="false" />
         <activity

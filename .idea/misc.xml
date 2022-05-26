@@ -13,20 +13,24 @@
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_mappage.xml" value="0.1" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_party_final.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_party_history.xml" value="0.1" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_party_login.xml" value="0.264" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_party_reg.xml" value="0.25" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_person2.xml" value="0.2" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_register1.xml" value="0.18952618453865336" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_select_page.xml" value="0.25" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_transporter_login.xml" value="0.25" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_transporter_reg.xml" value="0.25" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_truck_details.xml" value="0.2" />
-        <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_truck_history.xml" value="0.10648148148148148" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_truck_history.xml" value="0.2" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_truck_owner_reg.xml" value="0.2359375" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_truck_owner_reg2.xml" value="0.2" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_truckpage.xml" value="0.2" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/activity_userlist.xml" value="0.2" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/item.xml" value="0.264" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/person.xml" value="0.2" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/person2.xml" value="0.264" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/Trucks/app/src/main/res/layout/person3.xml" value="0.264" />
       </map>
     </option>
   </component>

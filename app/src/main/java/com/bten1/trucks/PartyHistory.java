@@ -19,44 +19,42 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class TruckHistory extends AppCompatActivity {
+public class PartyHistory extends AppCompatActivity {
+
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
     RecyclerView recyclerView;
-    ArrayList<person2> person2ArrayList;
-    person2Adapter person2Adapter;
+    ArrayList<person> personArrayList;
+    person3Adapter person3Adapter;
     ProgressDialog progressDialog;
-    FirebaseAuth mAuth;
-    //  String currentUserId = mAuth.getCurrentUser().getUid();
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    String  uid = user.getUid();
+    String uid;
     String umail=user.getEmail();
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_truck_history);
-
+        setContentView(R.layout.activity_party_history);
         progressDialog=new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Fetching data..");
         progressDialog.show();
-        recyclerView=findViewById(R.id.userList1);
+
+        recyclerView=findViewById(R.id.userList3);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        person2ArrayList =new ArrayList<person2>();
-        person2Adapter=new person2Adapter(TruckHistory.this,person2ArrayList);
-        recyclerView.setAdapter(person2Adapter);
+        personArrayList =new ArrayList<person>();
+        person3Adapter =new person3Adapter(PartyHistory.this,personArrayList);
+        recyclerView.setAdapter(person3Adapter);
 
-        getTruckData();
-
+        getData();
     }
 
 
-    private void getTruckData() {
-        db.collection("person2").whereEqualTo("user_mail",umail)
+    private void getData() {
+        db.collection("person").whereEqualTo("mail",umail)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
@@ -66,21 +64,19 @@ public class TruckHistory extends AppCompatActivity {
                             Log.e("Firestore error",error.getMessage());
                             return;
                         }
-                        for(DocumentChange dc :value.getDocumentChanges()){
-                            if(dc.getType()==DocumentChange.Type.ADDED ){
-                                person2ArrayList.add(dc.getDocument().toObject(person2.class));
+                        for(com.google.firebase.firestore.DocumentChange dc :value.getDocumentChanges()){
+                            if(dc.getType()== DocumentChange.Type.ADDED ){
+                                personArrayList.add(dc.getDocument().toObject(person.class));
 
 
                             }
-                            person2Adapter.notifyDataSetChanged();
+                            person3Adapter.notifyDataSetChanged();
                             if(progressDialog.isShowing())
                                 progressDialog.dismiss();
                         }
                     }
                 });
-
     }
 
 }
-
 
