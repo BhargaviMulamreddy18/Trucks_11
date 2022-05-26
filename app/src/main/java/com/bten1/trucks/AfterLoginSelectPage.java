@@ -83,7 +83,7 @@ public class AfterLoginSelectPage extends AppCompatActivity {
                 m.put("delivery_date", delivery_v_v);
                 m.put("mail",umail);
                 m.put("uid",i);
-                m.put("fix",true);
+                m.put("fix",false);
                 m.put("fixer",None);
 
               //  FirebaseDatabase.getInstance().getReference().child("Party_Data").child(i).updateChildren(m);
